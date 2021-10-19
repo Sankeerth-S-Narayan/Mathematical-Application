@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>Math Quiz</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">    
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div id="container">
+        <div id="score">
+        Score:<span id="scorevalue">0</span>
+        </div>
+        <div id="correct">
+        Correct
+        </div>
+        <div id="tryagain">
+        Try Again
+        </div>
+        <div id="question">
+        
+            
+        </div>
+        <div id="check">
+        Check the Correct Answer
+        </div>
+        <div id="answers">
+            <div id="box1"class="box">
+                
+            </div>
+            <div id="box2"class="box">
+                
+            </div>
+            <div id="box3"class="box">
+                
+            </div>
+            <div id="box4"class="box">
+            
+            </div>
+         </div>
+        <div id="start">
+        Start
+        </div>
+        <div id="time">
+          Time Remaining:<span id=remaining> 0</span>
+        </div>
+        <div id="gameover">
+            <p> 
+                <br>Your Score is : 0</p>
+            
+        </div>
+    
+    </div>
+    <script >
+        var play = false;
+        var score=0;
+        var action;
+        var correctanswer;
+        var i;
+document.getElementById("start").onclick = function()
+{
+    if (play == true){
+        location.reload();
+    }else {
+        play=true;
+        score=0;
+        document.getElementById("scorevalue").innerHTML=score;
+        document.getElementById("start").innerHTML="Reset";
+        document.getElementById("time").style.display="block";
+        document.getElementById("gameover").style.display="none";
+        
+        timeremaining=45    ;
+   
+        document.getElementById("remaining").innerHTML=timeremaining;
+        countdown();
+        generateqa();
+    }
+
+    
+for(i=1;i<5;i++){
+document.getElementById("box"+i).onclick=function(){
+    if(play==true){
+        if(this.innerHTML==correctanswer){
+            score++;
+            document.getElementById("scorevalue").innerHTML=score;
+            document.getElementById("correct").style.display="block";
+            document.getElementById("tryagain").style.display="none";
+//            setInterval(function(){
+//                document.getElementById("correct").style.display="block";
+//            },1000);
+//            document.getElementById("correct").style.display="block";
+            generateqa();
+        }else{
+            document.getElementById("tryagain").style.display="block";
+            document.getElementById("correct").style.display="none";
+
+//            setInterval(function(){
+//            document.getElementById("tryagain").style.display="block";
+//            },1000);
+//            document.getElementById("tryagain").style.display="block";
+        }
+    }
+}
+}
+
+function countdown()
+    {
+        action=setInterval(function(){
+            timeremaining-=1;
+            document.getElementById("remaining").innerHTML=timeremaining;
+            if (timeremaining == 0)
+                {
+                    stopinterval();
+                    document.getElementById("gameover").style.display="block";
+                    document.getElementById("gameover").innerHTML="<p>Your Score is:"+score+".</p>";
+                    document.getElementById("time").style.display="none";
+//                    document.getElementById("check").style.display="none";
+//                    document.getElementById("score").style.display="none";
+//                    document.getElementById("correct").style.display="none";
+                    document.getElementById("tryagain").style.display="none";
+                    
+                    document.getElementById("start").innerHTML="Start Again";
+                    play=true;
+                    
+                    
+                }
+        },1000);
+    }
+function stopinterval()
+    {
+        clearInterval(action);
+    }
+function generateqa()
+    {
+        var x = 1+ Math.round(10*Math.random());
+        var y = 1+ Math.round(10*Math.random());
+        correctanswer=x*y;
+        document.getElementById("question").innerHTML=x+"X"+y;
+        var correctposition = 1+ Math.round(3*Math.random());
+        document.getElementById("box"+correctposition).innerHTML=correctanswer;
+        var answers=[correctanswer];
+        for(i=1;i<5;i++)
+            {
+                if(i!=correctposition)
+                   { var wronganswer;
+                    do{
+                        wronganswer= (1+ Math.round(9*Math.random()))*(1+ Math.round(9*Math.random()));
+                    }while(answers.indexOf(wronganswer)>-1)
+                    document.getElementById("box"+i).innerHTML=wronganswer;
+                    answers.push(wronganswer);
+                    
+                   }
+            }
+    }
+}
+
+    </script>
+
+
+
+</body>
+    
+</html>

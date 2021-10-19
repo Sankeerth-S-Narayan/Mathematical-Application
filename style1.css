@@ -1,0 +1,186 @@
+
+html
+{
+    height: 110%;
+    background: url(image/wp3373974.webp)100% no-repeat  ;    
+    
+}
+
+#container
+{
+    height: 540px;
+    width: 550px;
+    background-color: rgba( 27, 154, 186, 0.619 );
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px 13px black;
+/*    background: url(images/backs.jpg)  no-repeat;*/
+    
+}
+
+#score
+{
+    background-color: #6fa4e5;
+    padding: 10px;
+    width: 50px;
+    margin: 0px 0px 0px 470px;
+    position: absolute;
+    border-radius: 10px;
+/*    right: 500px;*/
+    
+}
+#correct
+{
+    background-color: #80f556;
+    position: absolute;
+    padding: 10px;
+    width: 50px;
+    text-align: center;
+    margin: 0px 0px 0px 240px;
+/*    left:720px;*/
+    display: none;
+    border-radius: 10px;
+}
+#tryagain
+{
+    background-color: #ef1a1a;
+    position: absolute;
+    padding: 10px;
+/*    left:710px;*/
+    margin: 0px 0px 0px 240px;
+    display: none;
+    border-radius: 10px;
+}
+#question
+{
+    background-color: #050000;
+    height: 140px;
+    padding: 20px 20px 50px 20px ;
+    width: 450px;
+    margin: 50px auto 20px auto;
+    box-shadow: 4px 4px 40px black ;
+    border-radius: 20px;
+    font-size: 120px;
+    text-align: center;
+    font-family: cursive;
+    color: white;
+    
+}
+#check
+{
+    height: 30px;
+    width: 300px;
+    background-color: #d4fc78;
+    margin: 20px auto;
+    margin-top: 30px;
+    padding: 5px;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 15px;
+    border: 1px solid black;
+    box-shadow: 4px 4px 10px #000000;
+}
+#check:hover{
+    height: 32px;
+    width: 302px;
+    font-size: 28px;
+}
+#answers
+{
+    height: 100px;
+    width: 530px;
+    margin: 25px auto;
+    
+}
+.box
+{
+    width: 85px;
+    background-color: white;
+    height: 85px;
+    float: left;
+    margin-right: -10px;
+    margin: 20px;
+    margin-left: 26px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 80px;
+    font-size: 40px;
+    font-family: cursive;
+    position: relative;
+    transition: all 0.2s;
+}
+.box:hover
+{
+  background-color:#2eef54;
+    color: #ffffff;
+}
+
+.box:active
+{
+    box-shadow: 4px 0px  #057a05;
+    top: 4px;
+}
+#start
+{
+    width: 85px;
+    background-color: #0fa8e0;
+    padding: 7px;
+/*    height: 85px;*/
+/*    float: left;*/
+/*    margin-right: -10px;*/
+    margin: 30px auto;
+/*    margin-left: 26px;*/
+    border-radius: 10px;
+    text-align: center;
+/*    line-height: 80px;*/
+    font-size: 20px;
+    font-family:inherit;
+/*    font-weight: 500;*/
+/*    position: relative;*/
+    transition: all 0.2s;
+    box-shadow: 12px 12px 10px black;
+    
+}
+#start:active
+{
+    bottom: 4px;
+    box-shadow: 0px 0px;
+}
+
+#time
+{
+    width: 170px;
+/*    background-color: white;*/
+    text-align: center;
+    position: relative;
+    top: -50px;
+    left: 370px;
+    padding: 6px;
+    border-radius: 10px; 
+    font-size: 16px;
+    font-family: cursive;
+    display: none;
+    color: white;
+}
+#gameover
+{
+    height: 300px;
+    color: white;
+/*    width: 400px;*/
+/*    background:linear-gradient(#3eeed3,#000000);*/
+    position: relative;
+    background: url(image/RMIs0gk.png) no-repeat 25px ;
+    top: -580px;
+/*    left: -10px;*/
+    font-size: 30px;
+    text-align: center;
+/*    line-height: 100px;*/
+    padding: 10px;
+/*    display: none;*/
+    border-radius: 10px;
+    line-height: 430px;
+    font-weight: bold;
+    font-family: cursive;
+    display: none;
+}
